@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 2</title>
+    <title>Lesson 5</title>
 
     <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
 </head>
@@ -13,12 +13,32 @@
 <body>
     <div id="app">
         <span>
+            <h1> v-if </h1>
             技能名稱 / 技能等級 / 技能說明
-            <ul>
-                <li v-for="item in message">
-                    {{item.name}} / {{item.level}} / {{item.description}}
-                </li>
-            </ul>
+            <div>
+                <span v-for="item in message">
+                    <!-- 技能等級為1 -->
+                    <div v-if="item.level === 1">
+                        {{item.name}} / {{item.level}} / {{item.description}}
+                    </div>
+                    <!-- 技能等級為2 -->
+                    <div v-else-if="item.level === 2">
+                        {{item.name}} / {{item.level}} / {{item.description}}
+                    </div>
+                    <!-- 剩下的技能等級 -->
+                    <div v-else>
+                        {{item.name}} / {{item.level}} / {{item.description}}
+                    </div>
+                </span>
+            </div>
+        </span>
+
+        <span>
+            <h1> v-show </h1>
+            技能名稱 / 技能等級 / 技能說明
+            <div v-show="item.level > 1" v-for="item in message">
+                {{item.name}} / {{item.level}} / {{item.description}}
+            </div>
         </span>
     </div>
 

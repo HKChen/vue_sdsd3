@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 6</title>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ count }}</h1>
+        <button @click="updateEvent">update</button>
+        <button v-if="count > 0" @click="subEvent">sub</button>
+    </div>
+    <button id="del" @click="del">del</button>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            methods: {
+                updateEvent() {
+                    this.count += 1;
+                },
+                subEvent() {
+                    if (this.count > 0) {
+                        this.count -= 1;
+                    }
+                }
+            },
+            // 看 broswer console mode 的變化
+            beforeCreate() {
+                console.log('beforeCreate - this.count ', this.count);
+                console.log('beforeCreate - this.$el ', this.$el)
+            },
+            created() {
+                console.log('created - this.count, ', this.count)
+            },
+            beforeMount() {
+                console.log('beforeMount - this.count ', this.count);
+            },
+            mounted() {
+                console.log('mounted - this.count, ', this.count)
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate: ', this.$el.querySelector('h1').innerText, this.count);
+            },
+            updated() {
+                console.log('updated: ', this.$el.querySelector('h1').innerText, this.count)
+            },
+            beforeDestroy() {
+                console.log('beforeDestory');
+            },
+            destroyed() {
+                console.log('destroyed');
+            }
+        });
+
+        var dd = new Vue({
+            el: '#del',
+            methods: {
+                del() {
+                    app.$destroy();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
