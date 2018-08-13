@@ -9,7 +9,7 @@
 
 ## node.js
 有一個介接 api 的課程要讓 json file 起一個 server 讓您方便實作介接流程
-請先把環境安裝 node.js 之後安裝下列指令
+請先把環境安裝 node.js 之後安裝 json-server 下達下列指令
 ~~~
 npm i -g json-server
 ~~~
@@ -17,7 +17,7 @@ npm i -g json-server
 ## Chrome Extension download
 請在 Chrome 下安裝兩個 extension 方便開發 debug
 - JSON Viewer
-- Vue.js devtools(Vue.js devtools 安裝玩後請至擴充套件內容，把允許檔案 xxxx 的把它打開)
+- Vue.js devtools(Vue.js devtools 安裝完後請至擴充套件內容，把允許檔案 xxxx 的把它打開)
 
 ## 下載實作範例
 https://github.com/HKChen/vue_sdsd3
