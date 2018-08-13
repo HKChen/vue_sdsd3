@@ -14,15 +14,20 @@
     <div id="app">
         <h1>Click Event</h1>
         <span style="font-size: 30px">{{ message }}</span>
-        <button @click="reverseMessage"> ReverseString </button>
-        <button @click="defaultMessage"> DefaultString </button>
+        <button @click="reverseMessage">ReverseString</button>
+        <button @click="defaultMessage">DefaultString</button>
+
+        <h2>{{ count }}</h2>
+        <button @click="addCount">add</button>
+
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue.js'
+                message: 'Hello Vue.js',
+                count: 0
             },
             methods: {
                 reverseMessage() {
@@ -30,6 +35,9 @@
                 },
                 defaultMessage() {
                     this.message = 'Hello Vue.js'
+                },
+                addCount() {
+                    this.count += 1;
                 }
             }
         })

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 9</title>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+    <style>
+        .default {
+            color: brown;
+        }
+        .grow {
+            color: #ee00ee;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <span>
+            技能名稱 / 技能等級 / 技能說明
+            <div>
+                <span v-for="item in message">
+                    <!-- 技能等級為1 -->
+                    <div :class="{ 'default': item.level === 1 }">
+                        {{item.name}} / {{item.level}} / {{item.description}}
+                    </div>
+                </span>
+            </div>
+        </span>
+        <br/><br/>
+        <a :href="hrefLink">連結測試</a>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: [{ "name": "體力增強", "level": 1, "description": "體力+15", "id": 1 },
+                { "name": "體力增強", "level": 2, "description": "體力+30", "id": 2 },
+                { "name": "體力增強", "level": 3, "description": "體力+50", "id": 3 },
+                { "name": "體力回復量UP", "level": 1, "description": "回復量1.1倍", "id": 4 },
+                { "name": "體力回復量UP", "level": 2, "description": "回復量1.2倍", "id": 5 },
+                { "name": "體力回復量UP", "level": 3, "description": "回復量1.3倍", "id": 6 }],
+                hrefLink: 'https://github.com/hkchen'
+            }
+        });
+    </script>
+</body>
+
+</html>
