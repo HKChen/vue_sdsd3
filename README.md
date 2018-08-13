@@ -1,6 +1,6 @@
 # sdsd3 member vue learning 實作前置作業
 
-## 編輯器
+## 編輯器(本篇實作採用 vscode)
 為了要讓大家實作到介接  api 流程，請安裝 vscode or sublime (如 notepad++ 有可以開啟 server 這些 plug-in 也可以，本篇範例教學採用 vscode)
 ### vscode plug-in download
 - open in browser (方便直接對文件右鍵開啟瀏覽器)
