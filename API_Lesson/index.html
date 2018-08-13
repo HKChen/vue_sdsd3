@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo</title>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <p>
+                <input type="text" v-model.trim="input">
+                <a href="javascript:;" @click="createHandler">CREATE</a>
+            </p>
+        </div>
+        <ol>
+            <li v-for="(item, index) in contents">
+                {{ item.content }}
+                <a href="javascript:;" @click="deleteHandler(index)">DELETE</a>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                input: '',
+                contents: []
+            },
+            methods: {
+                createHandler() {
+                    if (this.input) {
+                        axios.post('http://localhost:3000/contents', {
+                            content: this.input
+                        }).then((res)=>{
+                            this.input = ''
+                            this.contents.push(res.data)
+                        })
+                    }
+                },
+                deleteHandler(index) {
+                    var target = this.contents[index]
+                    axios.delete(`http://localhost:3000/contents/${target.id}`).then((res)=>{
+                        this.contents.splice(index, 1)
+                    })
+                }
+            },
+            mounted() {
+                axios.get('http://localhost:3000/contents').then((res)=>{
+                    this.contents = res.data
+                })
+            },
+        })
+    </script>
+</body>
+</html>
