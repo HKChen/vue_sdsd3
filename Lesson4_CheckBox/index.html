@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 4</title>
+
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>
+            <div>CheckBox</div>
+            <br/>
+            <div>
+                <input type="checkbox" id="jack" value="Jack" v-model="checkedItem">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="john" value="John" v-model="checkedItem">
+                <label for="john">John</label>
+                <input type="checkbox" id="mike" value="Mike" v-model="checkedItem">
+                <label for="mike">Mike</label>
+                <br>
+                <span>Checked names: {{ checkedItem }}</span>
+            </div>
+        </h1>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                checkedItem: []
+            }
+        })
+    </script>
+</body>
+
+</html>
