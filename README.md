@@ -7,19 +7,19 @@
 - Preview on web server (直接起一個暫時的 web server)
 - Vetur
 
-##[實作前置作業 - node.js]
+## [實作前置作業 - node.js]
 有一個介接 api 的課程要讓 json file 起一個 server 讓您方便實作介接流程
 請先把環境安裝 node.js 之後安裝下列指令
 ~~~
 npm i -g json-server
 ~~~
 
-##[實作前置作業 - 下載實作範例] (最終範例課程至上課前可能都還會有微調)
+## [實作前置作業 - 下載實作範例] (最終範例課程至上課前可能都還會有微調)
 https://github.com/HKChen/vue_sdsd3
 請至 github 網頁下載
 你也可以 git clone… 練練 git
 
-##[實作前置作業 - Chrome Extension download]
+## [實作前置作業 - Chrome Extension download]
 請在 Chrome 下安裝兩個 extension 方便開發 debug
 - JSON Viewer
 - Vue.js devtools(Vue.js devtools 安裝玩後請至擴充套件內容，把允許檔案 xxxx 的把它打開)
